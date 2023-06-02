@@ -4,6 +4,17 @@ using System;
 public class Player : Node2D
 {
     PackedScene bulletScene;
+    private float _health = 10;
+    public float Health
+    {
+        get { return _health; }
+        set 
+        { 
+            _health = value;
+            if(_health <= 0)
+                QueueFree();
+        }
+    }
 
     // Called when the node enters the scene tree for the first time.
     public override void _Ready()
