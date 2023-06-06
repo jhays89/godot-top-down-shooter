@@ -23,6 +23,16 @@ public class Bullet : Node2D
 
     private void OnCollision(Node body)
     {
+        // Important: set the bullet on a different layer than the player
+        // so that the bullet doesn't collide with the player
+        // Probably good practice to set all similar objects on their own layers
+
+        // Given our node heiarchy, the 'body' should be from the Area2D
+        // of an Enemy. So, by getting the 'parent' we are able to grab 
+        // the Enemy root node of that enemy instance
+        body.GetParent<Enemy>().Damage(1);
+
+        // QueueFree() will remove the bullet from the scene tree   
         QueueFree();
     }
 

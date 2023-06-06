@@ -1,11 +1,74 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Enemy.tscn" type="PackedScene" id=2]
+[ext_resource path="res://icon.png" type="Texture" id=3]
 
 [node name="Node2D" type="Node2D"]
 
 [node name="Player" parent="." instance=ExtResource( 1 )]
-position = Vector2( 553, 368 )
+position = Vector2( 190, 382 )
+
+[node name="Camera2D" type="Camera2D" parent="Player"]
+position = Vector2( -10, 0 )
+current = true
+limit_left = -700
+limit_top = -700
+limit_right = 700
+limit_bottom = 700
+drag_margin_h_enabled = true
+drag_margin_v_enabled = true
+editor_draw_limits = true
+editor_draw_drag_margin = true
 
 [node name="Enemy_1" parent="." instance=ExtResource( 2 )]
+
+[node name="Stationary_Object" type="Sprite" parent="."]
+position = Vector2( 476, 343 )
+texture = ExtResource( 3 )
+offset = Vector2( -49, -32 )
+
+[node name="Stationary_Object2" type="Sprite" parent="."]
+position = Vector2( 577, 345 )
+texture = ExtResource( 3 )
+offset = Vector2( -49, -32 )
+
+[node name="Stationary_Object3" type="Sprite" parent="."]
+position = Vector2( 720, 343 )
+texture = ExtResource( 3 )
+offset = Vector2( -49, -32 )
+
+[node name="Stationary_Object4" type="Sprite" parent="."]
+position = Vector2( 385, 342 )
+texture = ExtResource( 3 )
+offset = Vector2( -49, -32 )
+
+[node name="Stationary_Object5" type="Sprite" parent="."]
+position = Vector2( 207, 338 )
+texture = ExtResource( 3 )
+offset = Vector2( -49, -32 )
+
+[node name="Stationary_Object6" type="Sprite" parent="."]
+position = Vector2( 47, 338 )
+texture = ExtResource( 3 )
+offset = Vector2( -49, -32 )
+
+[node name="Stationary_Object7" type="Sprite" parent="."]
+position = Vector2( -611, 323 )
+texture = ExtResource( 3 )
+offset = Vector2( -49, -32 )
+
+[node name="Stationary_Object8" type="Sprite" parent="."]
+position = Vector2( -424, 321 )
+texture = ExtResource( 3 )
+offset = Vector2( -49, -32 )
+
+[node name="Stationary_Object9" type="Sprite" parent="."]
+position = Vector2( -281, 321 )
+texture = ExtResource( 3 )
+offset = Vector2( -49, -32 )
+
+[node name="Stationary_Object10" type="Sprite" parent="."]
+position = Vector2( -103, 318 )
+texture = ExtResource( 3 )
+offset = Vector2( -49, -32 )

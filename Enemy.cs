@@ -4,6 +4,15 @@ using System;
 public class Enemy : Node2D
 {
     private Timer timer;
+    private int health = 5;
+
+    public void Damage(int amount)
+    {
+        health -= amount;
+
+        if (health <= 0)
+            QueueFree();
+    }
 
     // Called when the node enters the scene tree for the first time.
     public override void _Ready()
@@ -27,6 +36,9 @@ public class Enemy : Node2D
         // follow player
         try
         {
+            // TODO: try implementing GetTree().Root.HasNode("targetPath")
+            // to check for existence. Otherwise, godot will throw error when
+            // trying to get the player. 
             var player = GetParent().GetNode<Player>("Player");
 
             // pixels per second
